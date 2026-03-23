@@ -10,6 +10,7 @@ import Shipping from './pages/Shipping';
 import Contact from './pages/Contact';
 import Refunds from './pages/Refunds';
 import Checkout from './pages/Checkout';
+import About from './pages/About';
 import './App.css'; 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/refunds" element={<Refunds />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </main>
         <Footer />
