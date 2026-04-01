@@ -2,7 +2,6 @@ import { useSEO, productListSchema, organizationSchema, websiteSchema } from '..
 import Hero from '../components/Hero';
 import ProductGrid from '../components/ProductGrid';
 import SEOContent from '../components/SEOContent';
-import AdsSection from '../components/AdsSection';
 
 // Products list for structured data — mirrors ProductGrid data
 const productsMeta = [
@@ -35,7 +34,6 @@ const Home = () => {
     <>
       <Hero />
       <ProductGrid />
-      <AdsSection />
       <SEOContent />
     </>
   );
