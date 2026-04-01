@@ -1,5 +1,5 @@
-import { ShoppingCart, Search, Moon, Sun, Menu } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ShoppingCart, Search, Moon, Sun, Menu, BookOpen } from 'lucide-react';
+import { Link, NavLink } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import './Navbar.css';
 
@@ -13,6 +13,16 @@ const Navbar = ({ theme, toggleTheme, toggleCart }) => {
             <Link to="/" className="logo">
               <span className="gradient-text" style={{ fontSize: '1.5rem', fontWeight: '800' }}>EpicKart</span>
             </Link>
+            <NavLink
+              to="/blog"
+              className={({ isActive }) =>
+                `navbar-blog-link${isActive ? ' navbar-blog-link--active' : ''}`
+              }
+              aria-label="Visit EpicKart Blog"
+            >
+              <BookOpen size={15} />
+              Blog
+            </NavLink>
           </div>
 
           <div className="navbar-center hidden-mobile">
@@ -23,6 +33,7 @@ const Navbar = ({ theme, toggleTheme, toggleCart }) => {
                 placeholder="Search for products, brands and more..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                aria-label="Search products"
               />
             </div>
           </div>

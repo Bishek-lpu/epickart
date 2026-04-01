@@ -4,14 +4,19 @@
 User-agent: *
 Allow: /
 
-# Block non-public pages
+# Block non-public / transactional pages
 Disallow: /checkout
 Disallow: /cart
 Disallow: /api/
-Disallow: /*.json$
 
-# Allow major crawlers unrestricted access
+# Allow Googlebot unrestricted access to all public content
 User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
 Allow: /
 
 User-agent: Bingbot

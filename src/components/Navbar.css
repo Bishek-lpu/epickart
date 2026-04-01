@@ -1,3 +1,31 @@
+/* Blog link in navbar */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.navbar-blog-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.navbar-blog-link:hover,
+.navbar-blog-link--active {
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  background: rgba(124, 58, 237, 0.07);
+}
+
 .navbar-wrapper {
   position: sticky;
   top: 0;
