@@ -1,0 +1,63 @@
+/* ── Ads Section Styles ────────────────────────────────────────────── */
+
+.ads-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.ads-container {
+  background: var(--surface-color);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.ads-container:hover {
+  border-color: var(--brand-primary);
+  transform: translateY(-2px);
+}
+
+.ads-header {
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.ads-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  opacity: 0.6;
+}
+
+.ads-placeholder {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ads-loading-hint {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  font-style: italic;
+  opacity: 0.5;
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 768px) {
+  .ads-section {
+    margin: 1.5rem auto;
+  }
+  .ads-container {
+    padding: 1rem;
+  }
+}

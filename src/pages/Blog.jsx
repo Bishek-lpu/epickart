@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useSEO, breadcrumbSchema } from '../utils/seo';
 import { blogPosts } from '../data/blogPosts';
+import AdsSection from '../components/AdsSection';
 import './Blog.css';
 
 const blogListSchema = {
@@ -80,6 +81,8 @@ const Blog = () => {
             </div>
           </Link>
         </section>
+
+        <AdsSection title="Recommended for You" />
 
         {/* All Articles Grid */}
         <section aria-label="All blog articles" className="blog-grid-section">
