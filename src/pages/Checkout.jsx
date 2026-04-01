@@ -1,9 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
+import { useSEO } from '../utils/seo';
 
 const Checkout = () => {
   const { cartItems, cartSubtotal, clearCart } = useShop();
+
+  useSEO({
+    title: 'Secure Checkout | EpicKart',
+    description: 'Complete your purchase securely at EpicKart. Fast checkout with UPI, Credit Card, Debit Card, and Net Banking. Protected by 256-bit SSL encryption.',
+    keywords: 'EpicKart checkout, secure payment EpicKart, buy tech gadgets india',
+    canonical: 'https://www.epickart.in/checkout',
+    noIndex: true, // Checkout pages should not be indexed
+  });
 
   const handleCheckout = (e) => {
     e.preventDefault();

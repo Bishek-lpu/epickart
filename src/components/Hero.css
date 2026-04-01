@@ -50,8 +50,8 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  line-height: 1.1;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.15;
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.02em;
@@ -64,10 +64,76 @@
   line-height: 1.6;
 }
 
+/* ── Trust Signals ─────────────────────────────── */
+.hero-trust-signals {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: -0.5rem;
+}
+
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  white-space: nowrap;
+}
+
+/* ── Hero Actions ─────────────────────────────── */
 .hero-actions {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.hero-actions .btn {
+  text-decoration: none;
+}
+
+/* ── Hero Stats ───────────────────────────────── */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-top: 0.5rem;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.hero-stat strong {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+  line-height: 1;
+}
+
+.hero-stat span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.hero-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border-color);
+  flex-shrink: 0;
 }
 
 .btn-lg {
@@ -150,25 +216,35 @@
     text-align: center;
     gap: 3rem;
   }
-  
+
   .hero-content {
     align-items: center;
   }
-  
+
   .hero-subtitle {
     max-width: 100%;
+  }
+
+  .hero-trust-signals {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
   }
 }
 
 @media (max-width: 576px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
   .hero-actions {
     flex-direction: column;
     width: 100%;
   }
   .btn-lg {
     width: 100%;
+    justify-content: center;
+  }
+  .hero-stats {
+    gap: 1rem;
+    padding: 1rem;
   }
 }

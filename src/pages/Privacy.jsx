@@ -1,6 +1,19 @@
+import { useSEO, breadcrumbSchema } from '../utils/seo';
 import './LegalPage.css';
 
 const Privacy = () => {
+  useSEO({
+    title: 'Privacy Policy — How EpicKart Protects Your Data',
+    description: 'EpicKart\'s Privacy Policy explains how we collect, use, and protect your personal information. We use 256-bit SSL encryption and never sell your data to third parties.',
+    keywords: 'EpicKart privacy policy, data protection EpicKart, personal information EpicKart, GDPR EpicKart, secure shopping EpicKart',
+    canonical: 'https://www.epickart.in/privacy',
+    noIndex: false,
+    jsonLd: breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Privacy Policy', path: '/privacy' },
+    ]),
+  });
+
   return (
     <div className="legal-page-container">
       <div className="legal-header">

@@ -1,0 +1,93 @@
+/* About Page Extended Styles */
+
+.about-content h2 {
+  margin-top: 2rem;
+}
+
+.about-content ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.about-content ul li {
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.about-cta {
+  display: flex;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.about-cta .btn {
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+}
+
+/* FAQ Accordion */
+.faq-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--brand-primary);
+}
+
+.faq-item summary {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition: background 0.2s ease;
+  user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--brand-primary);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item summary:hover {
+  background: var(--surface-color);
+}
+
+.faq-item p {
+  padding: 1rem 1.25rem 1.25rem;
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  border-top: 1px solid var(--border-color);
+}
+
+.faq-item a {
+  color: var(--brand-primary);
+  text-decoration: none;
+}
+
+.faq-item a:hover {
+  text-decoration: underline;
+}

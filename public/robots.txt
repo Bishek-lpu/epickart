@@ -1,0 +1,33 @@
+# robots.txt — EpicKart
+# https://www.epickart.in/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block non-public pages
+Disallow: /checkout
+Disallow: /cart
+Disallow: /api/
+Disallow: /*.json$
+
+# Allow major crawlers unrestricted access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.epickart.in/sitemap.xml

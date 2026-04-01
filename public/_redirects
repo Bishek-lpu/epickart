@@ -1,0 +1,8 @@
+# Netlify Redirects — EpicKart
+# Ensures React Router works correctly and avoids 404s on direct URL access
+
+# SPA fallback — all routes serve index.html (200, not 301)
+/*    /index.html   200
+
+# Force HTTPS (no www → www redirect optional)
+# http://epickart.in/*  https://www.epickart.in/:splat  301!

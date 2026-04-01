@@ -1,6 +1,18 @@
+import { useSEO, breadcrumbSchema } from '../utils/seo';
 import './LegalPage.css';
 
 const Refunds = () => {
+  useSEO({
+    title: 'Returns & Refunds Policy — 30-Day Easy Returns | EpicKart',
+    description: 'EpicKart\'s hassle-free return policy lets you return any product within 30 days. Refunds are processed via Razorpay to your original payment method. Full details inside.',
+    keywords: 'EpicKart return policy, refund policy EpicKart, 30 day returns tech gadgets, cancel order EpicKart, EpicKart refund processing time, how to return EpicKart',
+    canonical: 'https://www.epickart.in/refunds',
+    jsonLd: breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Returns & Refunds', path: '/refunds' },
+    ]),
+  });
+
   return (
     <div className="legal-page-container">
       <div className="legal-header">

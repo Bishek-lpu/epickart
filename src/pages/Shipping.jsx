@@ -1,6 +1,18 @@
+import { useSEO, breadcrumbSchema } from '../utils/seo';
 import './LegalPage.css';
 
 const Shipping = () => {
+  useSEO({
+    title: 'Shipping Policy — Fast Delivery Across India | EpicKart',
+    description: 'EpicKart offers free standard shipping on orders above ₹999, express 1-2 day delivery, and real-time order tracking. Learn about our complete shipping policy and delivery timelines.',
+    keywords: 'EpicKart shipping policy, free shipping india, fast delivery tech gadgets, EpicKart delivery time, express shipping EpicKart, order tracking EpicKart',
+    canonical: 'https://www.epickart.in/shipping',
+    jsonLd: breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Shipping Policy', path: '/shipping' },
+    ]),
+  });
+
   return (
     <div className="legal-page-container">
       <div className="legal-header">

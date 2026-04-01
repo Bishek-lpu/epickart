@@ -1,6 +1,18 @@
+import { useSEO, breadcrumbSchema } from '../utils/seo';
 import './LegalPage.css';
 
 const Terms = () => {
+  useSEO({
+    title: 'Terms & Conditions | EpicKart Online Store',
+    description: 'Read EpicKart\'s Terms and Conditions of use. By accessing our website and placing an order, you agree to our terms outlined here. All payments processed by Razorpay.',
+    keywords: 'EpicKart terms and conditions, EpicKart terms of service, EpicKart usage policy, Razorpay EpicKart payment terms',
+    canonical: 'https://www.epickart.in/terms',
+    jsonLd: breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Terms & Conditions', path: '/terms' },
+    ]),
+  });
+
   return (
     <div className="legal-page-container">
       <div className="legal-header">

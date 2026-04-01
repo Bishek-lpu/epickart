@@ -1,0 +1,24 @@
+{
+  "name": "EpicKart — Premium Tech & Gadgets Store",
+  "short_name": "EpicKart",
+  "description": "Shop the best premium tech gadgets, gaming gear, audio accessories, wearables, and smart home devices online at EpicKart. Fast delivery across India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d12",
+  "theme_color": "#7c3aed",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-IN",
+  "categories": ["shopping", "electronics", "technology"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false,
+  "related_applications": []
+}

@@ -1,6 +1,45 @@
+import { useSEO, breadcrumbSchema } from '../utils/seo';
 import './LegalPage.css';
 
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'EpicKart',
+  url: 'https://www.epickart.in',
+  email: 'support@epickart.in',
+  telephone: '+91-9630994006',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '139/144, Durga Nagar, Birgaon',
+    addressLocality: 'Raipur',
+    addressRegion: 'Chhattisgarh',
+    postalCode: '493221',
+    addressCountry: 'IN',
+  },
+  openingHours: 'Mo-Fr 09:00-18:00',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'support@epickart.in',
+    telephone: '+91-9630994006',
+    availableLanguage: ['English', 'Hindi'],
+  },
+};
+
 const Contact = () => {
+  useSEO({
+    title: 'Contact EpicKart — Customer Support | Help Centre',
+    description: 'Get in touch with EpicKart\'s customer support team. Reach us via email at support@epickart.in or call +91-9630994006. We respond within 24 hours, Monday to Friday.',
+    keywords: 'contact EpicKart, EpicKart customer support, EpicKart help centre, EpicKart email, EpicKart phone number, EpicKart Raipur',
+    canonical: 'https://www.epickart.in/contact',
+    jsonLd: [
+      breadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Contact Us', path: '/contact' },
+      ]),
+      localBusinessSchema,
+    ],
+  });
   return (
     <div className="legal-page-container">
       <div className="legal-header">
