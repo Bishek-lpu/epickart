@@ -221,6 +221,8 @@
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
+  /* standard property for forward compatibility */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -264,9 +266,11 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
   .related-grid {
     grid-template-columns: 1fr;
   }
+
   .related-card img {
     width: 90px;
     height: 65px;
