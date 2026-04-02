@@ -1,0 +1,53 @@
+/* ── Hilltop Ad Component ──────────────────────────────────────────── */
+
+.hilltop-ad-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 2rem auto;
+  max-width: 320px;
+  width: 100%;
+}
+
+.hilltop-ad-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  opacity: 0.55;
+}
+
+.hilltop-ad-slot {
+  width: 300px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 58, 237, 0.04);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* ── Blog-page ad section ── */
+.blog-ad-section {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 3rem;
+}
+
+/* ── BlogPost in-article ad section ── */
+.blogpost-ad-section {
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 0;
+}
+
+/* Show only on mobile (the banner is 300×100 mobile-only) */
+@media (min-width: 577px) {
+  .hilltop-ad-wrapper {
+    display: none;
+  }
+}

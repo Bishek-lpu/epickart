@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useSEO, breadcrumbSchema } from '../utils/seo';
 import { blogPosts } from '../data/blogPosts';
+import HilltopAd from '../components/HilltopAd';
 import './Blog.css';
 
 const blogListSchema = {
@@ -80,6 +81,11 @@ const Blog = () => {
             </div>
           </Link>
         </section>
+
+        {/* Hilltop Ad – 300×100 mobile banner */}
+        <div className="blog-ad-section">
+          <HilltopAd id="hilltop-ad-blog" />
+        </div>
 
         {/* All Articles Grid */}
         <section aria-label="All blog articles" className="blog-grid-section">

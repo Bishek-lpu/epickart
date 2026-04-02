@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { useSEO, breadcrumbSchema } from '../utils/seo';
 import { getBlogPostBySlug, getRelatedPosts } from '../data/blogPosts';
+import HilltopAd from '../components/HilltopAd';
 import './BlogPost.css';
 
 const BlogPost = () => {
@@ -111,6 +112,11 @@ const BlogPost = () => {
               }
               return null;
             })}
+          </div>
+
+          {/* Hilltop Ad – 300×100 mobile banner */}
+          <div className="blogpost-ad-section">
+            <HilltopAd id="hilltop-ad-blogpost" />
           </div>
 
           {/* CTA */}
