@@ -82,9 +82,9 @@ const Blog = () => {
           </Link>
         </section>
 
-        {/* Hilltop Ad – 300×100 mobile banner */}
+        {/* Hilltop Ad – 300×100 mobile only */}
         <div className="blog-ad-section">
-          <HilltopAd id="hilltop-ad-blog" />
+          <HilltopAd id="hilltop-ad-blog-mobile" variant="mobile" />
         </div>
 
         {/* All Articles Grid */}
@@ -118,6 +118,11 @@ const Blog = () => {
             ))}
           </div>
         </section>
+
+        {/* Hilltop Ad – 300×250 desktop + mobile banner */}
+        <div className="blog-desktop-ad-section">
+          <HilltopAd id="hilltop-ad-blog-desktop" variant="desktop" />
+        </div>
       </div>
     </div>
   );

@@ -2,24 +2,32 @@ import { useEffect, useRef } from 'react';
 import './HilltopAd.css';
 
 /**
- * HilltopAd – renders the Hilltop 300×100 banner ad (mobile only).
- * The ad script is injected once and cleaned up on unmount.
+ * HilltopAd – renders a Hilltop banner ad slot.
+ * The ad script is injected once on mount and cleaned up on unmount.
  *
- * @param {string} id   - unique id for the ad slot container (defaults to 'hilltop-ad')
+ * @param {string} id        – unique DOM id for the slot container
+ * @param {'mobile'|'desktop'} variant
+ *   'mobile'  → 300x100  (mobile only, hidden on desktop via CSS)
+ *   'desktop' → 300x250  (desktop + mobile, always visible)
  */
-const HilltopAd = ({ id = 'hilltop-ad' }) => {
+
+const AD_SCRIPTS = {
+  mobile:
+    '//conventionalresponse.com/bOX.Vqs/daGll/0KYRWfcH/Uejm/9SupZ/Uol/k/PoT/Y_5/M/jVAx1CMKjmkntbN/jGkByHMHDQU/zYMCwC',
+  desktop:
+    '//conventionalresponse.com/b.X/VGsTdGG/l/0lYJWScI/QeYm/9tuEZKUFl/k/PaT/Ye5bMIjyA/1hNrTVc/tpNXjSkzyCMpD/UD2VMbQa',
+};
+
+const HilltopAd = ({ id = 'hilltop-ad', variant = 'mobile' }) => {
   const containerRef = useRef(null);
   const scriptRef = useRef(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
-
-    // Avoid duplicate script injection if the component re-renders
-    if (scriptRef.current) return;
+    if (scriptRef.current) return; // prevent duplicate injection on re-render
 
     const script = document.createElement('script');
-    script.src =
-      '//conventionalresponse.com/bOX.Vqs/daGll/0KYRWfcH/Uejm/9SupZ/Uol/k/PoT/Y_5/M/jVAx1CMKjmkntbN/jGkByHMHDQU/zYMCwC';
+    script.src = AD_SCRIPTS[variant] ?? AD_SCRIPTS.mobile;
     script.async = true;
     script.referrerPolicy = 'no-referrer-when-downgrade';
     script.settings = {};
@@ -28,16 +36,19 @@ const HilltopAd = ({ id = 'hilltop-ad' }) => {
     scriptRef.current = script;
 
     return () => {
-      // Clean up the script on unmount
       if (scriptRef.current && scriptRef.current.parentNode) {
         scriptRef.current.parentNode.removeChild(scriptRef.current);
       }
       scriptRef.current = null;
     };
-  }, []);
+  }, [variant]);
 
   return (
-    <div className="hilltop-ad-wrapper" id={id} aria-label="Advertisement">
+    <div
+      className={`hilltop-ad-wrapper hilltop-ad--${variant}`}
+      id={id}
+      aria-label="Advertisement"
+    >
       <span className="hilltop-ad-label">Advertisement</span>
       <div className="hilltop-ad-slot" ref={containerRef} />
     </div>
